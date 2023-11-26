@@ -1,15 +1,14 @@
-const prompt = require("prompt-sync")()
-
-const OMDBAPI_KEY = process.env.OMDBAPI_KEY || prompt(`Enter an OMDB API Key:`) || null;
+console.log("readign OMDB API key from process.env.OMDBAPI_KEY");
+const OMDBAPI_KEY = process.env.OMDBAPI_KEY || null;
 if (OMDBAPI_KEY == null) {
-  console.log(`No API key, mocked responses will be used instead`)
+  console.warn(`No API key, mocked responses will be used instead`)
 }
 const MAX_OMDBAPI_CALLS = 4
 
 module.exports = {
   port: process.env.PORT || 3030,
   db: {
-    default: {
+    remote: {
       database: process.env.DB_NAME || 'myapp',
       user: process.env.DB_USER || 'postgres',
       password: process.env.DB_PASS || 'postgres',
