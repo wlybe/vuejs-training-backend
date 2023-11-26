@@ -9,6 +9,8 @@ externalDocs:
 servers:
   - url: http://localhost:3030
     description: Local testing (port 3030)
+  - url: https://movie-api-ybwl.koyeb.app/
+    description: test on Koyeb 
 tags:
 - name: user
   description: API to register and log users
